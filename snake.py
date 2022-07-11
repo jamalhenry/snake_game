@@ -30,6 +30,14 @@ class Snake:
         new_segment.goto(position)
         self.segments.append(new_segment)
 
+    #Method that resets the snake after losing
+    def reset(self):
+        for segments in self.segments:
+            segments.goto(1000, 1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+
     #Adds a new segment to the snake
     def extend(self):
         #Gets a hold of the last segment in the list
